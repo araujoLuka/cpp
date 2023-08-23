@@ -34,7 +34,6 @@ int main() {
                       << " - Turma esta cheia\n";
         else
             std::cout << "Aluno " << al[i]->getNome() << " adicionado com sucesso\n";
-    
     }
     
     // listagem dos alunos da disciplina
