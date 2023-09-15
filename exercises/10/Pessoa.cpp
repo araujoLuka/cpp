@@ -13,6 +13,13 @@ Pessoa::Pessoa(std::string nomePessoa, uint64_t cpfPessoa,
     setIdade(idadePessoa);
 }
 
+Pessoa::~Pessoa() {
+    // limpa os dados importantes para que não fiquem
+    // em lixo de memoria
+    this->cpf = 0;
+    this->nome = "";
+}
+
 uint64_t Pessoa::getCpf() {
     // retorna uma cópia do cpf
     return cpf;

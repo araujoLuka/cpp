@@ -10,6 +10,8 @@ class Pessoa {
     Pessoa(std::string nomePessoa);
     Pessoa(std::string nomePessoa, uint64_t cpfPessoa, unsigned short idade);
 
+    ~Pessoa();
+
     uint64_t getCpf();
     void setCpf(uint64_t novoCpf);
 

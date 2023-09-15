@@ -6,12 +6,18 @@ SalaAula::SalaAula(std::string nome, unsigned int capacidade)
 }
 
 SalaAula::~SalaAula(){
-    std::cerr << "Destruindo sala de aula " << this->nome << '\n';
+    // Avisa as disciplinas da lista disciplinasMinistradas que sala vai deixar de existir
     std::list<Disciplina*>::iterator it{disciplinasMinistradas.begin()};
     while(it != disciplinasMinistradas.end()){
-        std::cerr << "DEBUG: Removendo disciplina " << (*it)->getNome() << " da sala de aula\n";
+        // std::cerr << "DEBUG: Removendo disciplina " << (*it)->getNome() << " da sala de aula\n";
+        
+        // Como a lista sera alterada enquanto esta sendo iterada
+        // eh necessario realizar um procedimento especial para a remocao da sala:
+        // 1) Salva o endereco apontado pelo iterador com o objeto a ser removido
         Disciplina* d = (*it);
+        // 2) incrementa o iterador antes que a lista seja modificada
         it++;
+        // 3) define a sala como nula, sendo removida da lista de disciplinasMinistradas
         d->setSalaAula(nullptr);
     }
 }
