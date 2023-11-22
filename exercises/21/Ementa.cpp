@@ -14,7 +14,6 @@ Ementa::Ementa(const std::string descricao)
 Ementa::Ementa(const Ementa& ementa)
         :descricao{ementa.descricao}, livros{new std::list<std::shared_ptr<const Livro>>{*ementa.livros}}{
     std::cout << "Copiando ementa " << descricao << std::endl;
-
 }
 
 Ementa::Ementa(Ementa&& ementa)
